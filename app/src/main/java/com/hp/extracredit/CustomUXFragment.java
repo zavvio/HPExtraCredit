@@ -11,6 +11,7 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.FrameLayout;
+import android.widget.ToggleButton;
 
 import com.hp.linkreadersdk.AuthenticationCallback;
 import com.hp.linkreadersdk.CameraError;
@@ -42,6 +43,8 @@ public class CustomUXFragment extends Fragment implements DetectionCallback {
     private FrameLayout cameraFrame;
     private CameraView cameraView;
     private boolean isPresenting = false;
+
+    private ToggleButton toggleButton;
 
     public CustomUXFragment() {
         // Required empty public constructor
@@ -104,6 +107,9 @@ public class CustomUXFragment extends Fragment implements DetectionCallback {
         cameraFrame = (FrameLayout) fragmentCustomView.findViewById(R.id.custom_ux_camera);
         cameraView = new CameraView(getContext());
         cameraFrame.addView(cameraView);
+
+        toggleButton = (ToggleButton) fragmentCustomView.findViewById(R.id.toggleButton);
+        toggleButton.setChecked(true);
 
         manager.retrieveState(savedInstanceState);
         captureManager.retrieveSate(savedInstanceState);
