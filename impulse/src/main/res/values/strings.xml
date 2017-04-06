@@ -1,0 +1,5 @@
+<resources>
+    <string name="app_name">ImpulseLibrary</string>
+
+    <string name="not_exist_file">File does not exist</string>
+</resources>

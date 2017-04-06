@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="utf-8"?>
+<items version="2" >
+
+    <item
+        is-multidex="true"
+        jar="C:\Users\zavvi\AndroidStudioProjects\HPExtraCredit\app\build\intermediates\incremental-classes\debug\instant-run-bootstrap.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="25.0.2"
+        sha1="cd1112f7c437bac05fd5f5f1584f1f6899125639">
+        <dex dex="C:\Users\zavvi\AndroidStudioProjects\HPExtraCredit\app\build\intermediates\transforms\dex\debug\folders\1000\10000\instant-run-bootstrap_f3a6bcdb8caac62d3a8a67e41f725dea7e94159f\classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="C:\Users\zavvi\AndroidStudioProjects\HPExtraCredit\app\build\intermediates\incremental-runtime-classes\debug\instant-run.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="25.0.2"
+        sha1="510aa6efc159983dfbffa676a0dae37568c0a46f">
+        <dex dex="C:\Users\zavvi\AndroidStudioProjects\HPExtraCredit\app\build\intermediates\transforms\dex\debug\folders\1000\10000\instant-run_49be0b6d4fc03714baf1c078ff915c4a98f8a2c5\classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="C:\Users\zavvi\.gradle\caches\modules-2\files-2.1\com.michaelpardo\activeandroid\3.1.0-SNAPSHOT\4ab7b0182975bc57c49efc5e0b3baa4a10e4ec08\activeandroid-3.1.0-SNAPSHOT.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="25.0.2"
+        sha1="4ab7b0182975bc57c49efc5e0b3baa4a10e4ec08">
+        <dex dex="C:\Users\zavvi\AndroidStudioProjects\HPExtraCredit\app\build\intermediates\transforms\dex\debug\folders\1000\10\activeandroid-3.1.0-SNAPSHOT_0d50e2cff2ae657143e68be0d6c49a76247f2d20\classes.dex" />
+    </item>
+
+</items>
