@@ -3,16 +3,36 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context="com.hp.extracredit.com.hp.projectx.CustomUXFragment">
+    android:orientation="vertical"
+    tools:context="com.hp.extracredit.CustomUXFragment">
 
     <FrameLayout
         android:id="@+id/custom_ux_camera"
         android:layout_width="match_parent"
         android:layout_height="match_parent"/>
 
-    <Button
-        android:layout_width="wrap_content"
+    <!-- <LinearLayout
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="Capture"/>
+        android:layout_gravity="bottom"
+        android:gravity="center_vertical">  </LinearLayout>-->
+
+        <ToggleButton
+            android:id="@+id/toggleButton"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="start|bottom|center_horizontal"
+            android:textOn="Scan On"
+            android:textOff="Scan Off"/>
+
+        <android.support.v7.widget.AppCompatImageButton
+            android:id="@+id/button"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="bottom|center"
+            android:background="@null"
+           android:src="@drawable/ic_camera"/>
+
+
 
 </FrameLayout>
