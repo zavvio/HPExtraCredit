@@ -29,6 +29,13 @@
             </intent-filter>
         </activity>
         <activity android:name=".PrintActivity"></activity>
+
+        <activity
+            android:name=".ui.ScannedItemsActivity"
+            android:label="Scanned Item"
+            android:logo="@drawable/about_icon" />
+
     </application>
+
 
 </manifest>

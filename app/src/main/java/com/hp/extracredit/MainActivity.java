@@ -1,6 +1,7 @@
 package com.hp.extracredit;
 
 import android.Manifest;
+import android.content.Intent;
 import android.content.pm.PackageManager;
 import android.location.Location;
 import android.os.Build;
@@ -21,6 +22,7 @@ import android.widget.FrameLayout;
 import android.widget.ProgressBar;
 import android.widget.TextView;
 
+import com.hp.extracredit.ui.ScannedItemsActivity;
 import com.hp.linkreadersdk.EasyReadingCallback;
 import com.hp.linkreadersdk.EasyReadingFragment;
 import com.hp.linkreadersdk.ErrorCode;
@@ -405,6 +407,7 @@ public class MainActivity extends AppCompatActivity
                 // do something with the clicked item :D
                 switch (position) {
                     case 1:
+                        startActivity(new Intent(MainActivity.this, ScannedItemsActivity.class));
                         break;
                     case 2:
                         break;
@@ -415,5 +418,8 @@ public class MainActivity extends AppCompatActivity
             }
         })
                 .build();
+
+//        result.getActionBarDrawerToggle().setDrawerIndicatorEnabled(false);
+        getSupportActionBar().setDisplayHomeAsUpEnabled(true);
     }
 }
