@@ -111,6 +111,17 @@ public class CustomUXFragment extends Fragment implements DetectionCallback {
         toggleButton = (ToggleButton) fragmentCustomView.findViewById(R.id.toggleButton);
         toggleButton.setChecked(true);
 
+        toggleButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                if(toggleButton.isChecked()) {
+                    startScanning();
+                } else {
+                    captureManager.stopScanning();
+                }
+            }
+        });
+
         manager.retrieveState(savedInstanceState);
         captureManager.retrieveSate(savedInstanceState);
 
@@ -141,7 +152,15 @@ public class CustomUXFragment extends Fragment implements DetectionCallback {
     @Override
     public void onStart() {
         super.onStart();
-        if (manager.isAuthorized()) {
+        if (manager.isAuthorized() && toggleButton.isChecked()) {
+            captureManager.startSession(cameraView);
+        }
+    }
+
+    @Override
+    public void onResume() {
+        super.onResume();
+        if (manager.isAuthorized() && toggleButton.isChecked()) {
             captureManager.startSession(cameraView);
         }
     }
