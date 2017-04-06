@@ -22,4 +22,109 @@
     <string name="camera_permission_denied">Camera permission denied</string>
     <string name="camera_failed">Camera failed to open</string>
 
+    <string name="title_activity_main">Impulse</string>
+    <string name="media_size_2x3">2x3 in</string>
+    <string name="resolution">300 dpi</string>
+    <string name="printer_not_found">Printer not found</string>
+    <string name="render_failed">Could not render document</string>
+
+    <string name="fail_unknown">unknown</string>
+    <string name="fail_wrong_paper">incorrect paper loaded</string>
+    <string name="fail_paper_jam">paper jam</string>
+    <string name="fail_paper_empty">out of paper</string>
+    <string name="fail_low_temperature">too cold</string>
+    <string name="fail_high_temperature">too hot</string>
+    <string name="fail_bad_data">bad image data</string>
+    <string name="fail_cover_open">cover is open</string>
+    <string name="fail_cooling">cooling off</string>
+    <string name="fail_bluetooth_permissions">missing bluetooth permissions</string>
+    <string name="fail_bluetooth_discovery">could not start bluetooth discovery</string>
+    <string name="fail_bluetooth_disabled">bluetooth is disabled</string>
+    <string name="fail_battery_fault">battery error</string>
+    <string name="fail_battery_low">battery too low</string>
+    <string name="fail_connection_failed">connection failed</string>
+    <string name="title_activity_more_options">More Options</string>
+
+    <string name="print_service_vendor">HP, Inc.</string>
+
+    <string name="device_settings">Device Settings</string>
+    <string name="device_status">Device Status: %1$s</string>
+    <string name="device_status_summary">Tap to refresh</string>
+    <string name="device_ready">ready</string>
+    <string name="fail_busy">busy</string>
+
+    <string name="label_data">Data:</string>
+    <string name="label_device_address">Device address:</string>
+    <string name="label_device_color">Device color:</string>
+    <string name="label_printer_status">Printer status:</string>
+    <string name="label_state">State:</string>
+    <string name="unknown_characteristic">Unknown characteristic</string>
+    <string name="unknown_service">Unknown service</string>
+    <string name="no_data">No data</string>
+    <string name="done">Done</string>
+    <string name="connected">Connected</string>
+    <string name="disconnected">Disconnected</string>
+
+    <string name="change">Change</string>
+
+    <string-array name="auto_power_off_entries">
+        <item>Always On</item>
+        <item>3 Minutes</item>
+        <item>5 Minutes</item>
+        <item>10 Minutes</item>
+    </string-array>
+
+    <string-array name="auto_power_off_values">
+        <item>0</item>
+        <item>3</item>
+        <item>5</item>
+        <item>10</item>
+    </string-array>
+
+    <string name="battery_level">Battery Level: %1$d%%</string>
+    <string name="battery_level_unknown">Battery Level: Unknown</string>
+    <string name="auto_power_off">Auto Power Off</string>
+    <string name="unknown">Unknown</string>
+    <string name="print_mode">Print Mode</string>
+    <string name="hardware_version_key">hardware_version_key</string>
+    <string name="hardware_versions">Hardware Versions</string>
+    <string name="hardware_versions_summary">Firmware: %1$s, Hardware: %2$s</string>
+    <string name="device_settings_key">device_settings_key</string>
+    <string name="print_settings_key">print_settings_key</string>
+    <string name="print_settings">Print Settings</string>
+    <string name="device_info_key">device_info_key</string>
+    <string name="device_info">Device Information</string>
+    <string name="total_prints_key">total_prints_key</string>
+    <string name="total_prints">Total Prints: %1$d</string>
+    <string name="scale_image">Image Size</string>
+
+    <string-array name="print_mode_entries">
+        <item>Fill Page</item>
+        <item>Full Image</item>
+    </string-array>
+
+    <string-array name="print_mode_values">
+        <item>1</item>
+        <item>2</item>
+    </string-array>
+
+    <!-- Menu items -->
+    <string name="menu_connect">Connect</string>
+    <string name="menu_disconnect">Disconnect</string>
+    <string name="menu_scan">Scan</string>
+    <string name="menu_stop">Stop</string>
+    <string name="new_data">New Data</string>
+
+    <string-array name="copy_selection">
+        <item>1 Copy</item>
+        <item>2 Copies</item>
+        <item>3 Copies</item>
+        <item>4 Copies</item>
+    </string-array>
+    <string-array name="post_print_selection">
+        <item>1 Post</item>
+        <item>4 Post</item>
+        <item>9 Post</item>
+    </string-array>
+
 </resources>
