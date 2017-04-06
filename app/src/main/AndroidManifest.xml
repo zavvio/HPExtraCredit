@@ -35,6 +35,11 @@
             android:label="Scanned Item"
             android:logo="@drawable/about_icon" />
 
+        <activity
+            android:name=".ui.PostedImageActivity"
+            android:label="Posted Item"
+            android:logo="@drawable/about_icon" />
+
     </application>
 
 

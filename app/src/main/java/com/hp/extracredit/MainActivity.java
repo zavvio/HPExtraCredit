@@ -22,6 +22,7 @@ import android.widget.FrameLayout;
 import android.widget.ProgressBar;
 import android.widget.TextView;
 
+import com.hp.extracredit.ui.PostedImageActivity;
 import com.hp.extracredit.ui.ScannedItemsActivity;
 import com.hp.linkreadersdk.EasyReadingCallback;
 import com.hp.linkreadersdk.EasyReadingFragment;
@@ -410,6 +411,7 @@ public class MainActivity extends AppCompatActivity
                         startActivity(new Intent(MainActivity.this, ScannedItemsActivity.class));
                         break;
                     case 2:
+                        startActivity(new Intent(MainActivity.this, PostedImageActivity.class));
                         break;
                     default:
                         break;
