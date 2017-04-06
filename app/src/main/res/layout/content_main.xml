@@ -11,7 +11,7 @@
     android:paddingTop="@dimen/activity_vertical_margin"
     app:layout_behavior="@string/appbar_scrolling_view_behavior"
     tools:context="com.hp.extracredit.PrintActivity"
-    tools:showIn="@layout/activity_main">
+    tools:showIn="@layout/activity_print">
 
     <TextView
         android:id="@+id/view_selected_device"
