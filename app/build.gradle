@@ -1,7 +1,7 @@
 apply plugin: 'com.android.application'
 
 android {
-    compileSdkVersion 23
+    compileSdkVersion 24
     buildToolsVersion '25.0.2'
     defaultConfig {
         applicationId "com.hp.extracredit"
@@ -66,6 +66,9 @@ dependencies {
     compile 'net.sf.biweekly:biweekly:0.5.0'
     compile 'com.android.support.constraint:constraint-layout:1.0.2'
     compile project(':impulse')
+    compile('com.mikepenz:materialdrawer:5.9.0@aar') {
+        transitive = true
+    }
     testCompile 'junit:junit:4.12'
 }
 

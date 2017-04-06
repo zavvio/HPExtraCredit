@@ -25,6 +25,15 @@ import com.hp.linkreadersdk.EasyReadingCallback;
 import com.hp.linkreadersdk.EasyReadingFragment;
 import com.hp.linkreadersdk.ErrorCode;
 import com.hp.linkreadersdk.LocationHolder;
+import com.mikepenz.materialdrawer.AccountHeader;
+import com.mikepenz.materialdrawer.AccountHeaderBuilder;
+import com.mikepenz.materialdrawer.Drawer;
+import com.mikepenz.materialdrawer.DrawerBuilder;
+import com.mikepenz.materialdrawer.model.PrimaryDrawerItem;
+import com.mikepenz.materialdrawer.model.ProfileDrawerItem;
+import com.mikepenz.materialdrawer.model.SecondaryDrawerItem;
+import com.mikepenz.materialdrawer.model.interfaces.IDrawerItem;
+import com.mikepenz.materialdrawer.model.interfaces.IProfile;
 
 public class MainActivity extends AppCompatActivity
         implements NavigationView.OnNavigationItemSelectedListener, PayoffContentDialogFragment.DialogListener, NetworkErrorDialogFragment.DialogListener
@@ -101,6 +110,8 @@ public class MainActivity extends AppCompatActivity
 
         //NavigationView navigationView = (NavigationView) findViewById(R.id.nav_view);
         //navigationView.setNavigationItemSelectedListener(this);
+
+        setUpDrawer();
     }
 
     // Use the Client ID and Secret to create an instance of the preconfigured EasyReadingFragment capable of scanning
@@ -351,5 +362,58 @@ public class MainActivity extends AppCompatActivity
         if (isScanning) {
            // startScanButton.setVisibility(View.GONE);
         }
+    }
+
+    private void setUpDrawer() {
+        new DrawerBuilder().withActivity(this).build();
+        //if you want to update the items at a later time it is recommended to keep it in a variable
+//        PrimaryDrawerItem item1 = new PrimaryDrawerItem().withIdentifier(1).withName(R.string.drawer_item_home);
+//        SecondaryDrawerItem item2 = new SecondaryDrawerItem().withIdentifier(2).withName(R.string.drawer_item_settings);
+
+        // Create the AccountHeader
+        AccountHeader headerResult = new AccountHeaderBuilder()
+                .withActivity(this)
+                .withHeaderBackground(R.color.hp_light_blue)
+                .addProfiles(
+                        new ProfileDrawerItem().withName("Mike Penz").withEmail("mikepenz@gmail.com").withIcon(getResources().getDrawable(R.drawable.ic_launcher)),
+                        new ProfileDrawerItem().withName("John Yang").withEmail("johnyang@gmail.com").withIcon(getResources().getDrawable(R.drawable.ic_launcher))
+                )
+                .withOnAccountHeaderListener(new AccountHeader.OnAccountHeaderListener() {
+                    @Override
+                    public boolean onProfileChanged(View view, IProfile profile, boolean currentProfile) {
+                        return false;
+                    }
+                })
+                .build();
+
+        //create the drawer and remember the `Drawer` result object
+        Drawer result = new DrawerBuilder()
+                .withActivity(this)
+//                .withToolbar(toolbar)
+                .withAccountHeader(headerResult)
+                .withTranslucentStatusBar(false)
+                .withActionBarDrawerToggle(false)
+                .addDrawerItems(
+                        new PrimaryDrawerItem().withIdentifier(1).withName("My Scans").withIcon(R.drawable.about_icon),
+//                        new DividerDrawerItem(),
+                        new PrimaryDrawerItem().withIdentifier(2).withName("My Posts").withIcon(R.drawable.about_icon),
+                        new PrimaryDrawerItem().withIdentifier(3).withName("My Social").withIcon(R.drawable.icon_share)
+                )
+                .withOnDrawerItemClickListener(new Drawer.OnDrawerItemClickListener() {
+            @Override
+            public boolean onItemClick(View view, int position, IDrawerItem drawerItem) {
+                // do something with the clicked item :D
+                switch (position) {
+                    case 1:
+                        break;
+                    case 2:
+                        break;
+                    default:
+                        break;
+                }
+                return false;
+            }
+        })
+                .build();
     }
 }
