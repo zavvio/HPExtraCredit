@@ -41,7 +41,8 @@ public class HttpManager {
     public static String getAccessToken(String uri) {
         BufferedReader reader = null;
         try {
-            URL url = new URL("https://www.livepaperapi.com/auth/v2/token/");
+            //URL url = new URL("https://www.livepaperapi.com/auth/v2/token/");
+            URL url = new URL(uri);
             HttpsURLConnection con = (HttpsURLConnection) url.openConnection();
             con.setRequestProperty("User-Agent", "hp-extra-credit-v0.1");
             con.setRequestProperty("Authorization", auth_token);

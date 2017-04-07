@@ -10,8 +10,11 @@ import android.text.method.ScrollingMovementMethod;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import java.util.List;
+
 public class LinkEmbedActivity extends AppCompatActivity {
     TextView output;
+    List<MyTask> tasks;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -21,15 +24,15 @@ public class LinkEmbedActivity extends AppCompatActivity {
         output.setMovementMethod(new ScrollingMovementMethod());
 
         if (isOnline()) {
-            requestData();
+            requestData("https://www.livepaperapi.com/auth/v2/token");
         } else {
             Toast.makeText(this, "Network isn't available", Toast.LENGTH_LONG).show();
         }
     }
 
-    private void requestData() {
+    private void requestData(String uri) {
         MyTask task = new MyTask();
-        task.executeOnExecutor(AsyncTask.THREAD_POOL_EXECUTOR, "");
+        task.executeOnExecutor(AsyncTask.THREAD_POOL_EXECUTOR, uri);
     }
 
     protected boolean isOnline() {
@@ -42,13 +45,22 @@ public class LinkEmbedActivity extends AppCompatActivity {
         }
     }
 
-    private class MyTask extends AsyncTask<String> {
+    private class MyTask extends AsyncTask<String, String, String> {
         @Override
-        protected Object doInBackground(Object[] params) {
-            return null;
+        protected void onPreExecute() {
+//            tasks.add(this);
         }
 
         @Override
+        protected String doInBackground(String... params) {
+            String content = HttpManager.getAccessToken(params[0]);
+            return content;
+        }
 
+        @Override
+        protected void onPostExecute(String result) {
+            output.setText(result);
+//            tasks.remove(this);
+        }
     }
 }
