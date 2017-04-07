@@ -3,11 +3,13 @@ package com.hp.extracredit.ui;
 import android.content.Intent;
 import android.os.Bundle;
 import android.support.v4.BuildConfig;
+import android.support.v7.preference.PreferenceManager;
 import android.view.View;
 import android.widget.AdapterView;
 import android.widget.ListView;
 
 import com.hp.extracredit.CameraActivity;
+import com.hp.extracredit.PrintActivity;
 import com.hp.extracredit.R;
 import com.hp.extracredit.Utils.StoreInfo;
 
@@ -39,9 +41,12 @@ public class StoreProductActivity extends AbstractAppCompatActivity{
                         getApplicationContext(),
                         ((TextView) v.findViewById(R.id.grid_item_label))
                                 .getText(), Toast.LENGTH_SHORT).show();*/
-                Intent intent = new Intent(StoreProductActivity.this, CameraActivity.class);
+
+                Intent intent = new Intent(StoreProductActivity.this, PrintActivity.class);
                 intent.putExtra(CameraActivity.Flag, true);
+                intent.putExtra("filename", PreferenceManager.getDefaultSharedPreferences(StoreProductActivity.this).getString("ssss", ""));
                 startActivity(intent);
+
 
             }
         });
@@ -50,7 +55,7 @@ public class StoreProductActivity extends AbstractAppCompatActivity{
             @Override
             public void onItemSelected(AdapterView<?> adapterView, View view, int i, long l) {
 
-                Intent intent = new Intent(StoreProductActivity.this, CameraActivity.class);
+                Intent intent = new Intent(StoreProductActivity.this, PrintActivity.class);
                 intent.putExtra(CameraActivity.Flag, true);
                 startActivity(intent);
             }
