@@ -105,9 +105,13 @@
             android:label="@string/title_activity_link"
             android:theme="@style/AppTheme.NoActionBar"></activity>
         <activity
-            android:name=".ui.LinkActivity"
-            android:label="@string/title_activity_link"
-            android:theme="@style/AppTheme.NoActionBar"></activity>
+        android:name=".ui.AvailableStoreActivity"
+        android:label="Choose a store"
+        android:theme="@style/myAppTheme"></activity>
+        <activity
+            android:name=".ui.StoreProductActivity"
+            android:label="Choose a product"
+            android:theme="@style/myAppTheme"></activity>
     </application>
 
 </manifest>

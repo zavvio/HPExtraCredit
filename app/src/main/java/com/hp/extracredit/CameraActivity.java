@@ -18,6 +18,8 @@ import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.Toast;
 
+import com.hp.extracredit.ui.AvailableStoreActivity;
+
 import java.io.File;
 
 public class CameraActivity extends AppCompatActivity {
@@ -56,6 +58,14 @@ public class CameraActivity extends AppCompatActivity {
             public void onClick(View v) {
                 Intent intent = new Intent(context, PrintActivity.class);
                 intent.putExtra("filename", fileName);
+                startActivity(intent);
+            }
+        });
+        findViewById(R.id.link_to_merchand).setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent = new Intent(context, AvailableStoreActivity.class);
+//                intent.putExtra("filename", fileName);
                 startActivity(intent);
             }
         });
