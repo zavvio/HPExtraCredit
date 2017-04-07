@@ -21,15 +21,12 @@
             app:queryHint="Type something..." />
     </RelativeLayout>
 
-    <GridView
-        android:id="@+id/gridView1"
-        android:numColumns="auto_fit"
+    <ListView
+        android:id="@+id/list_view1"
         android:gravity="center"
-        android:columnWidth="100dp"
-        android:stretchMode="columnWidth"
         android:layout_width="match_parent"
         android:layout_height="match_parent" >
 
-    </GridView>
+    </ListView>
 
 </LinearLayout>
