@@ -1,1 +1,2 @@
 include ':app', ':impulse'
+project(':impulse').projectDir = new File('../impulse/lib')

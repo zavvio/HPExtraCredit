@@ -34,34 +34,24 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:visibility="gone"
-        android:id="@+id/progress_bar"/>
+        android:id="@+id/progress_bar"
+        android:layout_toRightOf="@+id/print_button"/>
 
-    <LinearLayout
-        android:id="@+id/printLayout"
+    <View
+        android:id="@+id/print_divider"
+        android:layout_below="@+id/display_devices"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:orientation="vertical"
-        android:layout_below="@+id/display_devices">
-
-        <TextView
-            android:id="@+id/printHeader"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:text="Print Test" />
-        <Button
-            android:id="@+id/print_SPP_button"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:onClick="onClickSPP"
-            android:layout_alignParentStart="true"
-            android:text="API V2"/>
-    </LinearLayout>
+        android:layout_height="2dp"
+        android:background="@android:color/darker_gray"
+        android:layout_marginBottom="5dp"
+        android:layout_marginTop="5dp"/>
 
     <Button
         android:id="@+id/find_BLE_devices"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_below="@+id/printLayout"
+        android:layout_toRightOf="@+id/display_devices"
+        android:layout_below="@+id/view_selected_device"
         android:onClick="onClickFindBLEDevices"
         android:padding="5dp"
         android:text="Find BLE Devices" />
@@ -70,11 +60,44 @@
         android:id="@+id/ble_device_info_button"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_below="@+id/printLayout"
+        android:layout_below="@+id/view_selected_device"
         android:layout_toRightOf="@+id/find_BLE_devices"
         android:onClick="onClickGetBLEDeviceInfo"
         android:padding="5dp"
         android:text="Get Device Info"
-        android:visibility="gone" />
+        android:visibility="gone"
+        />
+
+    <View
+        android:id="@+id/ble_divider"
+        android:layout_width="match_parent"
+        android:layout_height="2dp"
+        android:background="@android:color/darker_gray"
+        android:layout_below="@+id/find_BLE_devices"
+        android:layout_marginTop="5dp"
+        android:layout_marginBottom="5dp" />
+
+    <EditText
+        android:id="@+id/editText_filename"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/ble_divider"
+        android:inputType="textPersonName"
+        android:text="/storage/emulated/0/Pictures/HPExtraCredit/seaturtle.jpg" />
+
+    <Button
+        android:id="@+id/print_button"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/editText_filename"
+        android:onClick="onClickSPP"
+        android:text="Print" />
+
+    <ImageView
+        android:id="@+id/imageViewPreview"
+        android:layout_width="match_parent"
+        android:layout_height="250dp"
+        android:layout_below="@+id/print_button"
+        android:background="@android:color/darker_gray" />
 
 </RelativeLayout>

@@ -9,6 +9,10 @@
     <uses-permission android:name="android.permission.CAMERA" />
     <uses-permission android:name="android.permission.READ_PHONE_STATE" />
     <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
+    <uses-permission android:name="android.permission.BLUETOOTH" />
+    <uses-permission android:name="android.permission.BLUETOOTH_ADMIN" />
+    <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION" />
 
     <application
         android:name="android.support.multidex.MultiDexApplication"
@@ -29,6 +33,45 @@
             </intent-filter>
         </activity>
         <activity android:name=".PrintActivity"></activity>
+        <service
+            android:name="com.hp.impulselib.ImpulseService"
+            android:enabled="true"
+            android:exported="true">
+        </service>
+        <service
+            android:name="com.hp.impulselib.MaltaService"
+            android:enabled="true">
+        </service>
+
+        <!-- Android Print Service requirements -->
+        <service
+            android:name=".ImpulsePrintService"
+            android:permission="android.permission.BIND_PRINT_SERVICE">
+            <intent-filter>
+                <action android:name="android.printservice.PrintService"/>
+            </intent-filter>
+            <meta-data
+                android:name="android.printservice"
+                android:resource="@xml/impulse_print_service">
+            </meta-data>
+
+        </service>
+
+        <activity
+            android:name=".MoreOptionsActivity"
+            android:label="@string/title_activity_more_options"
+            android:exported="true"
+            android:excludeFromRecents="true"
+            android:permission="android.permission.START_PRINT_SERVICE_CONFIG_ACTIVITY" />
+
+        <activity
+            android:name=".DeviceScanActivity"
+            android:label="BLE Device Scan"
+            android:theme="@android:style/Theme.Holo.Light"/>
+
+        <activity android:name=".LeDeviceControlActivity"
+            android:theme="@android:style/Theme.Holo.Light"/>
+        <service android:name="com.hp.impulselib.MaltaGATTService" android:enabled="true"/>
     </application>
 
 </manifest>

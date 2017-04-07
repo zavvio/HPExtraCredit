@@ -1,6 +1,7 @@
 package com.hp.extracredit;
 
 import android.content.Context;
+import android.content.Intent;
 import android.content.pm.PackageManager;
 import android.os.Bundle;
 import android.support.annotation.NonNull;
@@ -10,6 +11,7 @@ import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.Button;
 import android.widget.FrameLayout;
 import android.widget.ToggleButton;
 
@@ -45,6 +47,7 @@ public class CustomUXFragment extends Fragment implements DetectionCallback {
     private boolean isPresenting = false;
 
     private ToggleButton toggleButton;
+    private Button printButton;
 
     public CustomUXFragment() {
         // Required empty public constructor
@@ -119,6 +122,18 @@ public class CustomUXFragment extends Fragment implements DetectionCallback {
                 } else {
                     captureManager.stopScanning();
                 }
+            }
+        });
+
+        final Context context = this.getContext();
+        printButton = (Button) fragmentCustomView.findViewById(R.id.print_button);
+        printButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                captureManager.stopScanning();
+                captureManager.stopSession();
+                Intent intent = new Intent(context, PrintActivity.class);
+                startActivity(intent);
             }
         });
 

@@ -127,6 +127,11 @@ public class Utility {
 //        this.sendBroadcast(mediaScanIntent);
 //    }
 
+    public static void displayPic(ImageView mImageView, String filename) {
+        mCurrentPhotoPath = filename;
+        displayPic(mImageView);
+    }
+
     public static void displayPic(ImageView mImageView) {
         // Get the dimensions of the View
         int targetW = mImageView.getWidth();

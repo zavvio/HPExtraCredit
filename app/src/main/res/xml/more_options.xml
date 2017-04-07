@@ -1,0 +1,95 @@
+<?xml version="1.0" encoding="utf-8"?>
+<PreferenceScreen
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:seekbar="http://schemas.android.com/apk/res-auto"
+    >
+    <Preference
+        android:id="@+id/device_status"
+        android:key="@string/device_status_key"
+        android:persistent="false"
+        android:summary="@string/device_status_summary"
+        />
+
+    <PreferenceCategory
+        android:key="@string/print_settings_key"
+        android:title="@string/print_settings">
+
+        <!-- persistent must be true because https://github.com/MrBIMC/MaterialSeekBarPreference/issues/27 -->
+        <com.pavelsikun.seekbarpreference.SeekBarPreference
+            android:key="@string/scale_image_key"
+            android:title="@string/scale_image"
+            android:persistent="true"
+            android:defaultValue="640"
+
+            seekbar:msbp_minValue="160"
+            seekbar:msbp_maxValue="2048"
+            seekbar:msbp_measurementUnit="px"
+            seekbar:msbp_dialogEnabled="true"
+            />
+    </PreferenceCategory>
+
+    <PreferenceCategory
+        android:key="@string/device_settings_key"
+        android:title="@string/device_settings"
+        android:enabled="false"
+        >
+
+        <ListPreference
+            android:key="@string/auto_power_off_key"
+            android:persistent="false"
+            android:title="@string/auto_power_off"
+            android:dialogTitle="@string/auto_power_off"
+            android:entries="@array/auto_power_off_entries"
+            android:entryValues="@array/auto_power_off_values"
+           />
+
+        <ListPreference
+            android:key="@string/print_mode_key"
+            android:persistent="false"
+            android:title="@string/print_mode"
+            android:dialogTitle="@string/print_mode"
+            android:entries="@array/print_mode_entries"
+            android:entryValues="@array/print_mode_values"
+            />
+
+        <SwitchPreference
+            android:key="@string/auto_exposure_key"
+            android:title="Auto Exposure"
+            android:persistent="false"
+            />
+
+    </PreferenceCategory>
+
+    <PreferenceCategory
+        android:key="@string/device_info_key"
+        android:title="@string/device_info"
+        android:enabled="false"
+        >
+
+        <Preference
+            android:key="@string/battery_key"
+            android:persistent="false"
+            android:title="@string/battery_level_unknown"
+            android:clickable="false"
+            android:enabled="true"
+            />
+
+        <Preference
+            android:key="@string/hardware_version_key"
+            android:persistent="false"
+            android:title="@string/hardware_versions"
+            android:summary="@string/unknown"
+            android:clickable="false"
+            android:enabled="true"
+            />
+
+        <Preference
+            android:key="@string/total_prints_key"
+            android:persistent="false"
+            android:clickable="false"
+            android:title="BOGUS"
+            android:enabled="true"
+            />
+    </PreferenceCategory>
+
+</PreferenceScreen>

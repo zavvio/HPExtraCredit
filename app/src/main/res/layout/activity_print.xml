@@ -19,10 +19,12 @@ tools:context="com.hp.extracredit.PrintActivity">
         app:popupTheme="@style/AppTheme.PopupOverlay"/>
 
 </android.support.design.widget.AppBarLayout>
-<ScrollView
-    android:layout_width="match_parent"
-    android:layout_height="wrap_content">
-    <include layout="@layout/content_main"/>
-</ScrollView>
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <include layout="@layout/content_main" />
+    </ScrollView>
 
 </android.support.design.widget.CoordinatorLayout>
