@@ -21,6 +21,7 @@ import android.widget.Button;
 import android.widget.FrameLayout;
 import android.widget.ProgressBar;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import com.hp.extracredit.ui.MyRewardsActivity;
 import com.hp.extracredit.ui.PostedImageActivity;
@@ -380,8 +381,8 @@ public class MainActivity extends AppCompatActivity
                 .withActivity(this)
                 .withHeaderBackground(R.color.hp_light_blue)
                 .addProfiles(
-                        new ProfileDrawerItem().withName("Mike Penz").withEmail("Available Points: 3426").withIcon(getResources().getDrawable(R.drawable.ic_launcher)),
-                        new ProfileDrawerItem().withName("John Yang").withEmail("Available Points: 546").withIcon(getResources().getDrawable(R.drawable.ic_launcher))
+                        new ProfileDrawerItem().withName("Mike Penz").withEmail("Available Points: 3426").withIcon(getResources().getDrawable(R.drawable.icon3)),
+                        new ProfileDrawerItem().withName("John Yang").withEmail("Available Points: 546").withIcon(getResources().getDrawable(R.drawable.icon1))
                 )
                 .withOnAccountHeaderListener(new AccountHeader.OnAccountHeaderListener() {
                     @Override
@@ -425,6 +426,10 @@ public class MainActivity extends AppCompatActivity
                     case 5:
                         startActivity(new Intent(MainActivity.this, MyRewardsActivity.class));
                         break;
+                    case 6:
+                        Toast.makeText(MainActivity.this, "Comming soon... maybe", Toast.LENGTH_SHORT).show();
+                    case 7:
+                        Toast.makeText(MainActivity.this, "Are you sure you dare change settings for a hackthon app?", Toast.LENGTH_SHORT).show();
                     default:
                         break;
                 }

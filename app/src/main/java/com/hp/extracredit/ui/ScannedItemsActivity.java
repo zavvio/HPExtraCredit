@@ -17,8 +17,11 @@ public class ScannedItemsActivity extends AbstractAppCompatActivity{
     private final static String TAG = ScannedItemsActivity.class.getName();
     private boolean mIsDebuggable = BuildConfig.DEBUG;
 
-    static final String[] MOBILE_OS =
-            new String[] { "Android", "iOS", "WindowsMobile", "Blackberry"};
+    static final String[] REWARDS =
+            new String[] { "Buy 1 get 1 free", "20% off single item", "10% off purchase", "Free item next visit."};
+
+    static final int[] images =
+            new int[] { R.drawable.store_nike, R.drawable.store_2, R.drawable.store_3, R.drawable.store_hp};
 
     @Override
     public void onCreate(Bundle savedInstanceState) {
@@ -29,7 +32,7 @@ public class ScannedItemsActivity extends AbstractAppCompatActivity{
 
         ListView listView = (ListView) findViewById(R.id.list_view1);
 
-        listView.setAdapter(new AbstractListViewAdapter(this, MOBILE_OS));
+        listView.setAdapter(new AbstractListViewAdapter(this, REWARDS, images));
 
         listView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
             public void onItemClick(AdapterView<?> parent, View v,

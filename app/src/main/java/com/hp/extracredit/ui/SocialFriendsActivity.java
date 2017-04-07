@@ -20,6 +20,9 @@ public class SocialFriendsActivity extends AbstractAppCompatActivity{
     static final String[] Friends =
             new String[] { "John", "Zavvio", "Jay", "Denny"};
 
+    static final int[] images =
+            new int[] { R.drawable.icon1, R.drawable.icon2, R.drawable.icon3, R.drawable.icon4};
+
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -29,7 +32,7 @@ public class SocialFriendsActivity extends AbstractAppCompatActivity{
 
         ListView listView = (ListView) findViewById(R.id.list_view1);
 
-        listView.setAdapter(new AbstractListViewAdapter(this, Friends));
+        listView.setAdapter(new AbstractListViewAdapter(this, Friends, images));
 
         listView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
             public void onItemClick(AdapterView<?> parent, View v,

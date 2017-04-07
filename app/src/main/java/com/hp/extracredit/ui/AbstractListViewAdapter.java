@@ -17,11 +17,13 @@ import com.hp.extracredit.Utils.CircleImageView;
 public class AbstractListViewAdapter extends ArrayAdapter<String> {
     private final Context context;
     private final String[] values;
+    private final int[] images;
 
-    public AbstractListViewAdapter(Context context, String[] values) {
+    public AbstractListViewAdapter(Context context, String[] values, int[] images) {
         super(context, R.layout.my_scan_list_item, values);
         this.context = context;
         this.values = values;
+        this.images = images;
     }
 
     @Override
@@ -39,7 +41,8 @@ public class AbstractListViewAdapter extends ArrayAdapter<String> {
 
         System.out.println(s);
 
-        if (s.equals("WindowsMobile")) {
+        imageView.setImageResource(images[position]);
+       /* if (s.equals("WindowsMobile")) {
             imageView.setImageResource(R.drawable.ic_launcher);
         } else if (s.equals("iOS")) {
             imageView.setImageResource(R.drawable.ic_launcher);
@@ -47,7 +50,7 @@ public class AbstractListViewAdapter extends ArrayAdapter<String> {
             imageView.setImageResource(R.drawable.ic_launcher);
         } else {
             imageView.setImageResource(R.drawable.ic_launcher);
-        }
+        }*/
 
         return rowView;
     }

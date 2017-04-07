@@ -18,7 +18,10 @@ public class MyRewardsActivity extends AbstractAppCompatActivity{
     private boolean mIsDebuggable = BuildConfig.DEBUG;
 
     static final String[] REWARDS =
-            new String[] { "Discount1", "Discount2", "Discount3", "Discount4"};
+            new String[] { "Buy 1 get 1 free", "20% off single item", "10% off purchase", "Free item next visit."};
+
+    static final int[] images =
+            new int[] { R.drawable.store_nike, R.drawable.store_2, R.drawable.store_3, R.drawable.store_hp};
 
     @Override
     public void onCreate(Bundle savedInstanceState) {
@@ -29,7 +32,7 @@ public class MyRewardsActivity extends AbstractAppCompatActivity{
 
         ListView listView = (ListView) findViewById(R.id.list_view1);
 
-        listView.setAdapter(new AbstractListViewAdapter(this, REWARDS));
+        listView.setAdapter(new AbstractListViewAdapter(this, REWARDS, images));
 
         listView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
             public void onItemClick(AdapterView<?> parent, View v,
