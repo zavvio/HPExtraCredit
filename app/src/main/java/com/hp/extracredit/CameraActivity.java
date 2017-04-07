@@ -5,12 +5,14 @@ import android.content.ContentResolver;
 import android.content.Context;
 import android.content.Intent;
 import android.graphics.Bitmap;
+import android.graphics.BitmapFactory;
 import android.net.Uri;
 import android.os.Bundle;
 import android.provider.MediaStore;
 import android.support.design.widget.FloatingActionButton;
 import android.support.design.widget.Snackbar;
 import android.support.v7.app.AppCompatActivity;
+import android.support.v7.preference.PreferenceManager;
 import android.support.v7.widget.Toolbar;
 import android.util.Log;
 import android.view.View;
@@ -20,6 +22,7 @@ import android.widget.Toast;
 
 import com.hp.extracredit.ui.AvailableStoreActivity;
 
+import java.io.ByteArrayOutputStream;
 import java.io.File;
 
 public class CameraActivity extends AppCompatActivity {
@@ -27,7 +30,7 @@ public class CameraActivity extends AppCompatActivity {
     private static final int TAKE_PICTURE = 1;
     private Uri imageUri;
     private Button printButton;
-
+    public static String Flag = "flag";
     private String fileName;
 
 
@@ -37,6 +40,7 @@ public class CameraActivity extends AppCompatActivity {
         try {
             photo = Utility.createImageFile();
             fileName = photo.getAbsolutePath();
+            PreferenceManager.getDefaultSharedPreferences(this).edit().putString("ssss", fileName).apply();
         } catch (Exception e) {
 
         }
@@ -69,7 +73,19 @@ public class CameraActivity extends AppCompatActivity {
                 startActivity(intent);
             }
         });
-        takePhoto();
+        if (!getIntent().getBooleanExtra(Flag, false)) {
+            takePhoto();
+        } else {
+            Toast.makeText(this, "Watermark added to photo.", Toast.LENGTH_SHORT).show();
+
+            fileName = PreferenceManager.getDefaultSharedPreferences(this).getString("ssss", "");
+//            Bitmap bmp = BitmapFactory.decodeFile(fileName);
+//            ByteArrayOutputStream byteArrayOutputStream = new ByteArrayOutputStream();
+//            bmp.compress(Bitmap.CompressFormat.JPEG, 90, byteArrayOutputStream);
+//            ((ImageView)findViewById(R.id.imageView)).setImageBitmap(bmp);
+//            Utility.displayPic(((ImageView)findViewById(R.id.imageView)), fileName);
+        }
+
     }
 
     @Override
