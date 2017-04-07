@@ -10,9 +10,9 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ArrayAdapter;
-import android.widget.ImageView;
 import android.widget.TextView;
 import com.hp.extracredit.R;
+import com.hp.extracredit.Utils.CircleImageView;
 
 public class AbstractListViewAdapter extends ArrayAdapter<String> {
     private final Context context;

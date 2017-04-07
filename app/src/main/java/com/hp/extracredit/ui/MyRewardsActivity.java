@@ -13,7 +13,7 @@ import com.hp.extracredit.R;
  * Created by JohnYang on 4/6/17.
  */
 
-public class MyRewardsActivity extends AppCompatActivity{
+public class MyRewardsActivity extends AbstractAppCompatActivity{
     private final static String TAG = MyRewardsActivity.class.getName();
     private boolean mIsDebuggable = BuildConfig.DEBUG;
 

@@ -13,7 +13,7 @@ import com.hp.extracredit.R;
  * Created by JohnYang on 4/6/17.
  */
 
-public class SocialFriendsActivity extends AppCompatActivity{
+public class SocialFriendsActivity extends AbstractAppCompatActivity{
     private final static String TAG = SocialFriendsActivity.class.getName();
     private boolean mIsDebuggable = BuildConfig.DEBUG;
 

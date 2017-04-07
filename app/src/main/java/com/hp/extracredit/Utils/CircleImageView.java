@@ -1,4 +1,4 @@
-package com.hp.extracredit.ui;
+package com.hp.extracredit.Utils;
 
 import android.content.Context;
 import android.graphics.Canvas;

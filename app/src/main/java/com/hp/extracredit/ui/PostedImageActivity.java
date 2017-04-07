@@ -15,7 +15,7 @@ import android.widget.AdapterView.OnItemClickListener;
 
 import com.hp.extracredit.R;
 
-public class PostedImageActivity extends AppCompatActivity {
+public class PostedImageActivity extends AbstractAppCompatActivity {
 
     GridView gridView;
 

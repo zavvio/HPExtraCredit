@@ -13,7 +13,7 @@ import com.hp.extracredit.R;
  * Created by JohnYang on 4/6/17.
  */
 
-public class ScannedItemsActivity extends AppCompatActivity{
+public class ScannedItemsActivity extends AbstractAppCompatActivity{
     private final static String TAG = ScannedItemsActivity.class.getName();
     private boolean mIsDebuggable = BuildConfig.DEBUG;
 

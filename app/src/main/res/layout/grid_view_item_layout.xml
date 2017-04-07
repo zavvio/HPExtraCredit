@@ -6,13 +6,13 @@
     android:layout_margin="10px"
     android:orientation="vertical">
 
-    <com.hp.extracredit.ui.CircleImageView
+    <com.hp.extracredit.Utils.CircleImageView
         android:id="@+id/grid_item_image"
         android:layout_width="250px"
         android:layout_height="250px"
         android:layout_gravity="center"
         android:src="@drawable/ic_launcher" >
-    </com.hp.extracredit.ui.CircleImageView>
+    </com.hp.extracredit.Utils.CircleImageView>
 
     <TextView
         android:id="@+id/grid_item_label"
