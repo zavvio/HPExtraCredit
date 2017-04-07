@@ -26,6 +26,15 @@
             android:textOn="Scan On"
             android:textOff="Scan Off"/>
 
+    <Button
+        android:id="@+id/sht"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="bottom|right"
+        android:text="shoot"
+        android:visibility="visible"
+        />
+
     <!--
         <android.support.v7.widget.AppCompatImageButton
             android:id="@+id/capture_button"

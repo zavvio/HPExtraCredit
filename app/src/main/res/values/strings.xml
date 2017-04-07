@@ -126,6 +126,6 @@
         <item>4 Post</item>
         <item>9 Post</item>
     </string-array>
-    <string name="title_activity_link">LinkActivity</string>
+    <string name="title_activity_link">Link</string>
 
 </resources>
