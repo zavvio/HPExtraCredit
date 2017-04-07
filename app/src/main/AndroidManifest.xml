@@ -44,6 +44,20 @@
             android:logo="@drawable/about_icon"
             />
 
+        <activity
+            android:theme="@style/myAppTheme"
+            android:name=".ui.SocialFriendsActivity"
+            android:label="Scanned Item"
+            android:logo="@drawable/about_icon"
+            />
+
+        <activity
+            android:theme="@style/myAppTheme"
+            android:name=".ui.MyRewardsActivity"
+            android:label="Scanned Item"
+            android:logo="@drawable/about_icon"
+            />
+
     </application>
 
 

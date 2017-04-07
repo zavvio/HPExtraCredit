@@ -6,7 +6,7 @@
     android:layout_margin="20dp"
     android:orientation="horizontal">
 
-    <ImageView
+    <com.hp.extracredit.ui.CircleImageView
         android:id="@+id/logo"
         android:layout_width="200px"
         android:layout_height="200px"
@@ -14,7 +14,7 @@
         android:layout_marginRight="20px"
         android:layout_marginTop="5px"
         android:src="@drawable/ic_launcher" >
-    </ImageView>
+    </com.hp.extracredit.ui.CircleImageView>
 
     <TextView
         android:id="@+id/label"

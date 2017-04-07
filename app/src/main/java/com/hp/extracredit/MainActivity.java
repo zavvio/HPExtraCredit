@@ -22,8 +22,10 @@ import android.widget.FrameLayout;
 import android.widget.ProgressBar;
 import android.widget.TextView;
 
+import com.hp.extracredit.ui.MyRewardsActivity;
 import com.hp.extracredit.ui.PostedImageActivity;
 import com.hp.extracredit.ui.ScannedItemsActivity;
+import com.hp.extracredit.ui.SocialFriendsActivity;
 import com.hp.linkreadersdk.EasyReadingCallback;
 import com.hp.linkreadersdk.EasyReadingFragment;
 import com.hp.linkreadersdk.ErrorCode;
@@ -416,6 +418,12 @@ public class MainActivity extends AppCompatActivity
                         break;
                     case 3:
                         startActivity(new Intent(MainActivity.this, PostedImageActivity.class));
+                        break;
+                    case 4:
+                        startActivity(new Intent(MainActivity.this, SocialFriendsActivity.class));
+                        break;
+                    case 5:
+                        startActivity(new Intent(MainActivity.this, MyRewardsActivity.class));
                         break;
                     default:
                         break;

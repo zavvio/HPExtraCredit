@@ -14,11 +14,11 @@ import android.widget.ImageView;
 import android.widget.TextView;
 import com.hp.extracredit.R;
 
-public class ScannedItemsAdapter extends ArrayAdapter<String> {
+public class AbstractListViewAdapter extends ArrayAdapter<String> {
     private final Context context;
     private final String[] values;
 
-    public ScannedItemsAdapter(Context context, String[] values) {
+    public AbstractListViewAdapter(Context context, String[] values) {
         super(context, R.layout.my_scan_list_item, values);
         this.context = context;
         this.values = values;
@@ -31,7 +31,7 @@ public class ScannedItemsAdapter extends ArrayAdapter<String> {
 
         View rowView = inflater.inflate(R.layout.my_scan_list_item, parent, false);
         TextView textView = (TextView) rowView.findViewById(R.id.label);
-        ImageView imageView = (ImageView) rowView.findViewById(R.id.logo);
+        CircleImageView imageView = (CircleImageView) rowView.findViewById(R.id.logo);
         textView.setText(values[position]);
 
         // Change icon based on name

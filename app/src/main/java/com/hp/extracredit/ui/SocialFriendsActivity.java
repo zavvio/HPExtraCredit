@@ -13,12 +13,12 @@ import com.hp.extracredit.R;
  * Created by JohnYang on 4/6/17.
  */
 
-public class ScannedItemsActivity extends AppCompatActivity{
-    private final static String TAG = ScannedItemsActivity.class.getName();
+public class SocialFriendsActivity extends AppCompatActivity{
+    private final static String TAG = SocialFriendsActivity.class.getName();
     private boolean mIsDebuggable = BuildConfig.DEBUG;
 
-    static final String[] MOBILE_OS =
-            new String[] { "Android", "iOS", "WindowsMobile", "Blackberry"};
+    static final String[] Friends =
+            new String[] { "John", "Zavvio", "Jay", "Denny"};
 
     @Override
     public void onCreate(Bundle savedInstanceState) {
@@ -29,7 +29,7 @@ public class ScannedItemsActivity extends AppCompatActivity{
 
         ListView listView = (ListView) findViewById(R.id.list_view1);
 
-        listView.setAdapter(new AbstractListViewAdapter(this, MOBILE_OS));
+        listView.setAdapter(new AbstractListViewAdapter(this, Friends));
 
         listView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
             public void onItemClick(AdapterView<?> parent, View v,

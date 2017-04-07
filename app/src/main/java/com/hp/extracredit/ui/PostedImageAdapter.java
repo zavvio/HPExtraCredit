@@ -46,7 +46,7 @@ public class PostedImageAdapter extends BaseAdapter {
             textView.setText(mobileValues[position]);
 
             // set image based on selected text
-            ImageView imageView = (ImageView) gridView
+            CircleImageView imageView = (CircleImageView) gridView
                     .findViewById(R.id.grid_item_image);
 
             String mobile = mobileValues[position];
