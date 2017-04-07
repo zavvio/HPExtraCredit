@@ -378,8 +378,8 @@ public class MainActivity extends AppCompatActivity
                 .withActivity(this)
                 .withHeaderBackground(R.color.hp_light_blue)
                 .addProfiles(
-                        new ProfileDrawerItem().withName("Mike Penz").withEmail("mikepenz@gmail.com").withIcon(getResources().getDrawable(R.drawable.ic_launcher)),
-                        new ProfileDrawerItem().withName("John Yang").withEmail("johnyang@gmail.com").withIcon(getResources().getDrawable(R.drawable.ic_launcher))
+                        new ProfileDrawerItem().withName("Mike Penz").withEmail("Available Points: 3426").withIcon(getResources().getDrawable(R.drawable.ic_launcher)),
+                        new ProfileDrawerItem().withName("John Yang").withEmail("Available Points: 546").withIcon(getResources().getDrawable(R.drawable.ic_launcher))
                 )
                 .withOnAccountHeaderListener(new AccountHeader.OnAccountHeaderListener() {
                     @Override
@@ -422,6 +422,6 @@ public class MainActivity extends AppCompatActivity
                 .build();
 
 //        result.getActionBarDrawerToggle().setDrawerIndicatorEnabled(false);
-        getSupportActionBar().setDisplayHomeAsUpEnabled(true);
+//        getSupportActionBar().setDisplayHomeAsUpEnabled(true);
     }
 }

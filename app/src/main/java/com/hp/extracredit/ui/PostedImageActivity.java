@@ -4,9 +4,8 @@ package com.hp.extracredit.ui;
  * Created by JohnYang on 4/6/17.
  */
 
-
-import android.app.Activity;
 import android.os.Bundle;
+import android.support.v7.app.AppCompatActivity;
 import android.widget.AdapterView;
 import android.widget.GridView;
 import android.widget.TextView;
@@ -16,7 +15,7 @@ import android.widget.AdapterView.OnItemClickListener;
 
 import com.hp.extracredit.R;
 
-public class PostedImageActivity extends Activity {
+public class PostedImageActivity extends AppCompatActivity {
 
     GridView gridView;
 
