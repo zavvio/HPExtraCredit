@@ -397,20 +397,24 @@ public class MainActivity extends AppCompatActivity
                 .withTranslucentStatusBar(false)
                 .withActionBarDrawerToggle(false)
                 .addDrawerItems(
-                        new PrimaryDrawerItem().withIdentifier(1).withName("My Scans").withIcon(R.drawable.about_icon),
+                        new PrimaryDrawerItem().withIdentifier(1).withName("Camera").withIcon(R.drawable.about_icon),
+                        new PrimaryDrawerItem().withIdentifier(2).withName("Saved Scans").withIcon(R.drawable.about_icon),
 //                        new DividerDrawerItem(),
-                        new PrimaryDrawerItem().withIdentifier(2).withName("My Posts").withIcon(R.drawable.about_icon),
-                        new PrimaryDrawerItem().withIdentifier(3).withName("My Social").withIcon(R.drawable.icon_share)
+                        new PrimaryDrawerItem().withIdentifier(3).withName("My Hypes").withIcon(R.drawable.about_icon),
+                        new PrimaryDrawerItem().withIdentifier(4).withName("Social").withIcon(R.drawable.about_icon),
+                        new PrimaryDrawerItem().withIdentifier(5).withName("Rewards").withIcon(R.drawable.about_icon),
+                        new PrimaryDrawerItem().withIdentifier(6).withName("Activate Vendor Account").withIcon(R.drawable.about_icon),
+                        new PrimaryDrawerItem().withIdentifier(7).withName("Settings").withIcon(R.drawable.settings_icon)
                 )
                 .withOnDrawerItemClickListener(new Drawer.OnDrawerItemClickListener() {
             @Override
             public boolean onItemClick(View view, int position, IDrawerItem drawerItem) {
                 // do something with the clicked item :D
                 switch (position) {
-                    case 1:
+                    case 2:
                         startActivity(new Intent(MainActivity.this, ScannedItemsActivity.class));
                         break;
-                    case 2:
+                    case 3:
                         startActivity(new Intent(MainActivity.this, PostedImageActivity.class));
                         break;
                     default:
