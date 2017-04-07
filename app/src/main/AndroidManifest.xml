@@ -32,77 +32,68 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name=".PrintActivity"></activity>
+        <activity android:name=".PrintActivity" />
 
         <service
             android:name="com.hp.impulselib.ImpulseService"
             android:enabled="true"
-            android:exported="true">
-        </service>
+            android:exported="true"></service>
         <service
             android:name="com.hp.impulselib.MaltaService"
-            android:enabled="true">
-        </service>
+            android:enabled="true"></service>
 
         <!-- Android Print Service requirements -->
         <service
             android:name=".ImpulsePrintService"
             android:permission="android.permission.BIND_PRINT_SERVICE">
             <intent-filter>
-                <action android:name="android.printservice.PrintService"/>
+                <action android:name="android.printservice.PrintService" />
             </intent-filter>
+
             <meta-data
                 android:name="android.printservice"
-                android:resource="@xml/impulse_print_service">
-            </meta-data>
-
+                android:resource="@xml/impulse_print_service"></meta-data>
         </service>
 
         <activity
             android:name=".MoreOptionsActivity"
-            android:label="@string/title_activity_more_options"
-            android:exported="true"
             android:excludeFromRecents="true"
+            android:exported="true"
+            android:label="@string/title_activity_more_options"
             android:permission="android.permission.START_PRINT_SERVICE_CONFIG_ACTIVITY" />
-
         <activity
             android:name=".DeviceScanActivity"
             android:label="BLE Device Scan"
-            android:theme="@android:style/Theme.Holo.Light"/>
+            android:theme="@android:style/Theme.Holo.Light" />
+        <activity
+            android:name=".LeDeviceControlActivity"
+            android:theme="@android:style/Theme.Holo.Light" />
 
-        <activity android:name=".LeDeviceControlActivity"
-            android:theme="@android:style/Theme.Holo.Light"/>
-        <service android:name="com.hp.impulselib.MaltaGATTService" android:enabled="true"/>
+        <service
+            android:name="com.hp.impulselib.MaltaGATTService"
+            android:enabled="true" />
 
         <activity
-            android:theme="@style/myAppTheme"
             android:name=".ui.ScannedItemsActivity"
             android:label="Scanned Item"
             android:logo="@drawable/about_icon"
-            />
-
+            android:theme="@style/myAppTheme" />
         <activity
-            android:theme="@style/myAppTheme"
             android:name=".ui.PostedImageActivity"
             android:label="Posted Item"
             android:logo="@drawable/about_icon"
-            />
-
+            android:theme="@style/myAppTheme" />
         <activity
-            android:theme="@style/myAppTheme"
             android:name=".ui.SocialFriendsActivity"
             android:label="My Friends"
             android:logo="@drawable/about_icon"
-            />
-
+            android:theme="@style/myAppTheme" />
         <activity
-            android:theme="@style/myAppTheme"
             android:name=".ui.MyRewardsActivity"
             android:label="My Rewards"
             android:logo="@drawable/about_icon"
-            />
-
+            android:theme="@style/myAppTheme" />
+        <activity android:name=".LinkEmbedActivity"></activity>
     </application>
-
 
 </manifest>
