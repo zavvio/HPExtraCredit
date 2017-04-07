@@ -13,6 +13,7 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
 import android.widget.FrameLayout;
+import android.widget.ImageButton;
 import android.widget.ToggleButton;
 
 import com.hp.linkreadersdk.AuthenticationCallback;
@@ -48,6 +49,8 @@ public class CustomUXFragment extends Fragment implements DetectionCallback {
 
     private ToggleButton toggleButton;
     private Button printButton;
+
+    private ImageButton captureButton;
 
     public CustomUXFragment() {
         // Required empty public constructor
@@ -114,13 +117,18 @@ public class CustomUXFragment extends Fragment implements DetectionCallback {
         toggleButton = (ToggleButton) fragmentCustomView.findViewById(R.id.toggleButton);
         toggleButton.setChecked(true);
 
+        captureButton = (ImageButton) fragmentCustomView.findViewById(R.id.capture_button);
+
         toggleButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 if(toggleButton.isChecked()) {
                     startScanning();
+                    captureButton.setVisibility(View.INVISIBLE);
+
                 } else {
                     captureManager.stopScanning();
+                    captureButton.setVisibility(View.VISIBLE);
                 }
             }
         });

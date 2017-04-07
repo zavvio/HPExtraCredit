@@ -33,6 +33,7 @@
             </intent-filter>
         </activity>
         <activity android:name=".PrintActivity"></activity>
+
         <service
             android:name="com.hp.impulselib.ImpulseService"
             android:enabled="true"
@@ -72,6 +73,36 @@
         <activity android:name=".LeDeviceControlActivity"
             android:theme="@android:style/Theme.Holo.Light"/>
         <service android:name="com.hp.impulselib.MaltaGATTService" android:enabled="true"/>
+
+        <activity
+            android:theme="@style/myAppTheme"
+            android:name=".ui.ScannedItemsActivity"
+            android:label="Scanned Item"
+            android:logo="@drawable/about_icon"
+            />
+
+        <activity
+            android:theme="@style/myAppTheme"
+            android:name=".ui.PostedImageActivity"
+            android:label="Posted Item"
+            android:logo="@drawable/about_icon"
+            />
+
+        <activity
+            android:theme="@style/myAppTheme"
+            android:name=".ui.SocialFriendsActivity"
+            android:label="My Friends"
+            android:logo="@drawable/about_icon"
+            />
+
+        <activity
+            android:theme="@style/myAppTheme"
+            android:name=".ui.MyRewardsActivity"
+            android:label="My Rewards"
+            android:logo="@drawable/about_icon"
+            />
+
     </application>
+
 
 </manifest>
