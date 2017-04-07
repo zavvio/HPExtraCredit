@@ -256,7 +256,7 @@ public class PrintActivity extends AppCompatActivity {
                 .setPrintMode(printMode)
                 .build();
         //TODO:
-//        impulsePrintClient.print();
+        impulsePrintClient.print();
         bmp.recycle();
 
     }

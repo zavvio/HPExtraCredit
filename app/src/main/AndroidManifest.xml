@@ -112,6 +112,7 @@
             android:name=".ui.StoreProductActivity"
             android:label="Choose a product"
             android:theme="@style/myAppTheme"></activity>
+
     </application>
 
 </manifest>

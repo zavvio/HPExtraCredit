@@ -1,11 +1,13 @@
 package com.hp.extracredit;
 
 import android.app.Activity;
+import android.app.ProgressDialog;
 import android.content.Context;
 import android.content.Intent;
 import android.content.pm.PackageManager;
 import android.net.Uri;
 import android.os.Bundle;
+import android.os.Handler;
 import android.provider.MediaStore;
 import android.support.annotation.NonNull;
 import android.support.v4.app.Fragment;
@@ -17,8 +19,11 @@ import android.view.ViewGroup;
 import android.widget.Button;
 import android.widget.FrameLayout;
 import android.widget.ImageButton;
+import android.widget.ProgressBar;
+import android.widget.Toast;
 import android.widget.ToggleButton;
 
+import com.hp.extracredit.ui.LinkActivity;
 import com.hp.linkreadersdk.AuthenticationCallback;
 import com.hp.linkreadersdk.CameraError;
 import com.hp.linkreadersdk.CaptureManager;
@@ -54,6 +59,10 @@ public class CustomUXFragment extends Fragment implements DetectionCallback {
 
     private ToggleButton toggleButton;
     //private ImageButton captureButton;
+
+    private ProgressDialog mProgress;
+
+    private Button bt;
 
     public CustomUXFragment() {
         // Required empty public constructor
@@ -119,6 +128,14 @@ public class CustomUXFragment extends Fragment implements DetectionCallback {
 
         toggleButton = (ToggleButton) fragmentCustomView.findViewById(R.id.toggleButton);
         toggleButton.setChecked(true);
+
+        bt= (Button)fragmentCustomView.findViewById(R.id.sht);
+        bt.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                captureScan();
+            }
+        });
 
        // captureButton = (ImageButton) fragmentCustomView.findViewById(R.id.capture_button);
 
@@ -281,6 +298,33 @@ public class CustomUXFragment extends Fragment implements DetectionCallback {
         return isPresenting;
     }
 
+
+    private void captureScan() {
+
+        mProgress = ProgressDialog.show(getActivity(),null, "Processing the scan...",true);
+        mProgress.setCancelable(false);
+
+        mProgress.show();
+
+        Handler handler = new Handler();
+        handler.postDelayed(new Runnable() {
+            public void run() {
+                //mProgress.dismiss();
+                mProgress.setMessage("Completed processing!");
+                Handler handler = new Handler();
+                handler.postDelayed(new Runnable() {
+                    public void run() {
+                        mProgress.dismiss();
+
+                        Intent intent = new Intent(getContext(), LinkActivity.class);
+                        startActivity(intent);
+                    }
+                }, 1000);
+            }
+        }, 2000);
+
+
+    }
 
 
 
