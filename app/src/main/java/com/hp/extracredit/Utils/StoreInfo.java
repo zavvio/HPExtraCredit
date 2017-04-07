@@ -18,7 +18,7 @@ public class StoreInfo {
     public static final int[] nike_images =
             new int[] { R.drawable.nike1, R.drawable.nike_2};
     public static final int[] br_images =
-            new int[] { R.drawable.baskinRobbins_1, R.drawable.baskinRobbins_1};
+            new int[] { R.drawable.bas_1, R.drawable.bas_1};
     public static final int[] nestle_image =
             new int[] { R.drawable.nestle1, R.drawable.nestle2, R.drawable.nestle3};
     public static final int[] hp_images =

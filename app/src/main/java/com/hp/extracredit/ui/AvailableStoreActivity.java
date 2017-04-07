@@ -43,6 +43,20 @@ public class AvailableStoreActivity extends AbstractAppCompatActivity{
             }
         });
 
+        listView.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
+            @Override
+            public void onItemSelected(AdapterView<?> adapterView, View view, int i, long l) {
+                Intent intent = new Intent(AvailableStoreActivity.this, StoreProductActivity.class);
+                intent.putExtra(StoreInfo.STORE_SELECTION, i);
+                startActivity(intent);
+            }
+
+            @Override
+            public void onNothingSelected(AdapterView<?> adapterView) {
+
+            }
+        });
+
     }
 
     /*@Override
