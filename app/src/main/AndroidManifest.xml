@@ -47,14 +47,14 @@
         <activity
             android:theme="@style/myAppTheme"
             android:name=".ui.SocialFriendsActivity"
-            android:label="Scanned Item"
+            android:label="My Friends"
             android:logo="@drawable/about_icon"
             />
 
         <activity
             android:theme="@style/myAppTheme"
             android:name=".ui.MyRewardsActivity"
-            android:label="Scanned Item"
+            android:label="My Rewards"
             android:logo="@drawable/about_icon"
             />
 
