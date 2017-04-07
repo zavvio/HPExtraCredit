@@ -3,20 +3,65 @@
     xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:orientation="vertical">
+    android:orientation="vertical"
+    android:paddingBottom="20dp" >
 
 <ImageView
     android:id="@+id/imageview"
     android:layout_width="400dp"
     android:layout_height="400dp" />
 
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center_vertical"
+        android:orientation="vertical">
+
+        <!--
     <Button
-        android:id="@+id/print_button"
+        android:id="@+id/watermark_button"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Print"
-        android:paddingBottom="20dp"
-        android:layout_gravity="bottom"/>
+        android:text="Watermark the image"/> -->
 
+        <Button
+            android:id="@+id/edit_photo"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Edit Photo" />
+
+
+        <Button
+            android:id="@+id/link_to_merchand"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Link to Merchandise" />
+
+        <Button
+            android:id="@+id/selpr"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Select Printer" />
+
+        <Button
+            android:id="@+id/save_image"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Save Image" />
+
+        <Button
+            android:id="@+id/ana"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Anonymous Mode" />
+
+        <Button
+            android:id="@+id/print_button"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Print the Hype!" />
+
+
+    </LinearLayout>
 
 </LinearLayout>

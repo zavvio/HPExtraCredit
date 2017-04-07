@@ -77,6 +77,10 @@ public class PrintActivity extends AppCompatActivity {
 
     private Button getBleInfoButton;
 
+    private String fileName = "";
+
+    private TextView file;
+
 
     private final static Map<Integer, String> AutoPowerOffValues = new HashMap<Integer, String>() {{
         put(0x00, "None");
@@ -94,8 +98,8 @@ public class PrintActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_print);
-        Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
-        setSupportActionBar(toolbar);
+       // Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
+        //setSupportActionBar(toolbar);
 
         // request permissin explicityly
         ActivityCompat.requestPermissions(this, permissions, REQUEST_ID_PERMISSIONS);
@@ -118,6 +122,13 @@ public class PrintActivity extends AppCompatActivity {
 
         Utility.createRootDirectory();
         mImageView = (ImageView) findViewById(R.id.imageViewPreview);
+
+        Intent i= getIntent();
+        fileName = i.getStringExtra("filename");
+
+        file= (TextView) findViewById(R.id.editText_filename);
+        file.setText(fileName);
+
     }
 
     @Override

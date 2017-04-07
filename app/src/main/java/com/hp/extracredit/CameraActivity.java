@@ -26,12 +26,15 @@ public class CameraActivity extends AppCompatActivity {
     private Uri imageUri;
     private Button printButton;
 
+    private String fileName;
+
 
     public void takePhoto() {
         Intent intent = new Intent(MediaStore.ACTION_IMAGE_CAPTURE);
         File photo = null;
         try {
             photo = Utility.createImageFile();
+            fileName = photo.getAbsolutePath();
         } catch (Exception e) {
 
         }
@@ -52,6 +55,7 @@ public class CameraActivity extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 Intent intent = new Intent(context, PrintActivity.class);
+                intent.putExtra("filename", fileName);
                 startActivity(intent);
             }
         });

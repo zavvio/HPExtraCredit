@@ -83,7 +83,7 @@
         android:layout_height="wrap_content"
         android:layout_below="@+id/ble_divider"
         android:inputType="textPersonName"
-        android:text="/storage/emulated/0/Pictures/HPExtraCredit/seaturtle.jpg" />
+        android:text="(no file)" />
 
     <Button
         android:id="@+id/print_button"
