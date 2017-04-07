@@ -94,6 +94,14 @@
             android:logo="@drawable/about_icon"
             android:theme="@style/myAppTheme" />
         <activity android:name=".LinkEmbedActivity"></activity>
+            />
+
+        <activity
+            android:theme="@style/myAppTheme"
+            android:name=".CameraActivity"
+            android:label="Camera"
+            android:logo="@drawable/about_icon"
+            />
     </application>
 
 </manifest>

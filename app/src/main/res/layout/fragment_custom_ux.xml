@@ -26,6 +26,7 @@
             android:textOn="Scan On"
             android:textOff="Scan Off"/>
 
+    <!--
         <android.support.v7.widget.AppCompatImageButton
             android:id="@+id/capture_button"
             android:layout_width="wrap_content"
@@ -33,14 +34,7 @@
             android:layout_gravity="bottom|center"
             android:background="@null"
             android:visibility="invisible"
-           android:src="@drawable/ic_camera"/>
-
-        <Button
-            android:id="@+id/print_button"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="Print"
-            android:layout_gravity="bottom|right"/>
+           android:src="@drawable/ic_camera"/> -->
 
 
 

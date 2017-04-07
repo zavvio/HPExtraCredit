@@ -1,9 +1,12 @@
 package com.hp.extracredit;
 
+import android.app.Activity;
 import android.content.Context;
 import android.content.Intent;
 import android.content.pm.PackageManager;
+import android.net.Uri;
 import android.os.Bundle;
+import android.provider.MediaStore;
 import android.support.annotation.NonNull;
 import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentTransaction;
@@ -36,6 +39,8 @@ import com.hp.linkreadersdk.payoff.PayoffError;
 import com.hp.linkreadersdk.payoff.ResolveError;
 import com.hp.linkreadersdk.payoff.Web;
 
+import java.io.File;
+
 public class CustomUXFragment extends Fragment implements DetectionCallback {
 
     private static final int CAMERA_PERMISSION_CODE = 1;
@@ -48,9 +53,7 @@ public class CustomUXFragment extends Fragment implements DetectionCallback {
     private boolean isPresenting = false;
 
     private ToggleButton toggleButton;
-    private Button printButton;
-
-    private ImageButton captureButton;
+    //private ImageButton captureButton;
 
     public CustomUXFragment() {
         // Required empty public constructor
@@ -117,31 +120,22 @@ public class CustomUXFragment extends Fragment implements DetectionCallback {
         toggleButton = (ToggleButton) fragmentCustomView.findViewById(R.id.toggleButton);
         toggleButton.setChecked(true);
 
-        captureButton = (ImageButton) fragmentCustomView.findViewById(R.id.capture_button);
+       // captureButton = (ImageButton) fragmentCustomView.findViewById(R.id.capture_button);
 
         toggleButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 if(toggleButton.isChecked()) {
                     startScanning();
-                    captureButton.setVisibility(View.INVISIBLE);
+                    //captureButton.setVisibility(View.INVISIBLE);
 
                 } else {
                     captureManager.stopScanning();
-                    captureButton.setVisibility(View.VISIBLE);
+                    //captureButton.setVisibility(View.VISIBLE);
+                    Utility.createRootDirectory();
+                    startActivity(new Intent(getContext(), CameraActivity.class));
+                    //Utility.dispatchTakePictureIntent(getActivity());
                 }
-            }
-        });
-
-        final Context context = this.getContext();
-        printButton = (Button) fragmentCustomView.findViewById(R.id.print_button);
-        printButton.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                captureManager.stopScanning();
-                captureManager.stopSession();
-                Intent intent = new Intent(context, PrintActivity.class);
-                startActivity(intent);
             }
         });
 
@@ -286,4 +280,8 @@ public class CustomUXFragment extends Fragment implements DetectionCallback {
     public boolean isDialogShowing() {
         return isPresenting;
     }
+
+
+
+
 }
