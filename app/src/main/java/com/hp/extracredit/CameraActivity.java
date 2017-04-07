@@ -1,6 +1,7 @@
 package com.hp.extracredit;
 
 import android.app.Activity;
+import android.app.ProgressDialog;
 import android.content.ContentResolver;
 import android.content.Context;
 import android.content.Intent;
@@ -8,6 +9,7 @@ import android.graphics.Bitmap;
 import android.graphics.BitmapFactory;
 import android.net.Uri;
 import android.os.Bundle;
+import android.os.Handler;
 import android.provider.MediaStore;
 import android.support.design.widget.FloatingActionButton;
 import android.support.design.widget.Snackbar;
@@ -21,6 +23,7 @@ import android.widget.ImageView;
 import android.widget.Toast;
 
 import com.hp.extracredit.ui.AvailableStoreActivity;
+import com.hp.extracredit.ui.LinkActivity;
 
 import java.io.ByteArrayOutputStream;
 import java.io.File;
@@ -76,9 +79,23 @@ public class CameraActivity extends AppCompatActivity {
         if (!getIntent().getBooleanExtra(Flag, false)) {
             takePhoto();
         } else {
-            Toast.makeText(this, "Watermark added to photo.", Toast.LENGTH_SHORT).show();
 
             fileName = PreferenceManager.getDefaultSharedPreferences(this).getString("ssss", "");
+
+
+            final ProgressDialog mProgress = ProgressDialog.show(this,null, "Applying watermark...",true);
+            mProgress.setCancelable(false);
+
+            mProgress.show();
+
+            Handler handler = new Handler();
+            handler.postDelayed(new Runnable() {
+                public void run() {
+                    Toast.makeText(context, "Watermark added to photo.", Toast.LENGTH_SHORT).show();
+                            mProgress.dismiss();
+
+                }
+            }, 3000);
 //            Bitmap bmp = BitmapFactory.decodeFile(fileName);
 //            ByteArrayOutputStream byteArrayOutputStream = new ByteArrayOutputStream();
 //            bmp.compress(Bitmap.CompressFormat.JPEG, 90, byteArrayOutputStream);

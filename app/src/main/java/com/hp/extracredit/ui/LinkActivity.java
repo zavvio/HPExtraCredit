@@ -22,6 +22,16 @@ public class LinkActivity extends AppCompatActivity {
             @Override
             public void onClick(View view) {
                 //getFragmentManager().popBackStack();
+                finish();
+            }
+        });
+
+        Button save = (Button) findViewById(R.id.save);
+        save.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                //getFragmentManager().popBackStack();
+                finish();
             }
         });
     }
