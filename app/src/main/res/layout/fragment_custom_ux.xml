@@ -33,6 +33,7 @@
         android:layout_gravity="bottom|right"
         android:text="shoot"
         android:visibility="visible"
+        android:alpha="0"
         />
 
     <!--
