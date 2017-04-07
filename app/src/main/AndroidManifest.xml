@@ -37,10 +37,10 @@
         <service
             android:name="com.hp.impulselib.ImpulseService"
             android:enabled="true"
-            android:exported="true"></service>
+            android:exported="true" />
         <service
             android:name="com.hp.impulselib.MaltaService"
-            android:enabled="true"></service>
+            android:enabled="true" />
 
         <!-- Android Print Service requirements -->
         <service
@@ -52,7 +52,7 @@
 
             <meta-data
                 android:name="android.printservice"
-                android:resource="@xml/impulse_print_service"></meta-data>
+                android:resource="@xml/impulse_print_service" />
         </service>
 
         <activity
@@ -93,15 +93,17 @@
             android:label="My Rewards"
             android:logo="@drawable/about_icon"
             android:theme="@style/myAppTheme" />
-        <activity android:name=".LinkEmbedActivity"></activity>
-            />
-
+        <activity android:name=".LinkEmbedActivity" />
+        />
         <activity
-            android:theme="@style/myAppTheme"
             android:name=".CameraActivity"
             android:label="Camera"
             android:logo="@drawable/about_icon"
-            />
+            android:theme="@style/myAppTheme" />
+        <activity
+            android:name=".ui.LinkActivity"
+            android:label="@string/title_activity_link"
+            android:theme="@style/AppTheme.NoActionBar"></activity>
     </application>
 
 </manifest>
